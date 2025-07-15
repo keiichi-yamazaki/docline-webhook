@@ -16,7 +16,7 @@ CHANNEL_SECRET = os.getenv("LINE_CHANNEL_SECRET", "3f8fa94864662183862e67f973791
 CHANNEL_ACCESS_TOKEN = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", "YhSluRS7aLLcA94bVb4AojgjC1sP+cBzsKWYZ0vJhpv/i5eHJEcsI9ghSgIPypuPtQWQz6IxXJbnrNn0yj/KAdMoJ2pzPbUYnbqN4ocEEZSXaBJZTV//NbUm+c/58JsHNlJIjtDaXuUskjuoWz0M4AdB04t89/1O/w1cDnyilFU=")
 
 # LINEのWebhookを受信するルート
-@app.route("https://dd795d52fe10.ngrok-free.app/callback", methods=["POST"])
+@app.route("/callback", methods=["POST"])
 def callback():
     # ヘッダから署名を取得
     signature = request.headers.get("X-Line-Signature", "")
